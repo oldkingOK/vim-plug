@@ -307,6 +307,7 @@ vim.cmd('silent! colorscheme seoul256')
 | `g:plug_window`     | `-tabnew`                         | Command to open plug window                            |
 | `g:plug_pwindow`    | `vertical rightbelow new`         | Command to open preview window in `PlugDiff`           |
 | `g:plug_url_format` | `https://git::@github.com/%s.git` | `printf` format to build repo URL (Only applies to the subsequent `Plug` commands) |
+| `g:plug_finder`     | `find`                            | Tool for searching path, change to `fd` for better performance |
 
 
 ## Keybindings

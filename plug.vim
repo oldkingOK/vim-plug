@@ -263,7 +263,7 @@ function! s:to_s(v)
 endfunction
 
 function! s:glob(from, pattern)
-  return s:lines(globpath(a:from, a:pattern))
+  return s:lines(system(get(g:, "plug_finder", "find").' "'.a:pattern.'" '.a:from))
 endfunction
 
 function! s:source(from, ...)
@@ -2284,7 +2284,7 @@ function! plug#shellescape(arg, ...)
 endfunction
 
 function! s:glob_dir(path)
-  return map(filter(s:glob(a:path, '**'), 'isdirectory(v:val)'), 's:dirpath(v:val)')
+  return map(filter(s:glob(a:path, '.'), 'isdirectory(v:val)'), 's:dirpath(v:val)')
 endfunction
 
 function! s:progress_bar(line, bar, total)
